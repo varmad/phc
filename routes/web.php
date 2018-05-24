@@ -26,9 +26,10 @@ Route::group(['middleware' => 'auth'], function () {
   Route::prefix('admin')->group(function () {
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
     Route::resource('users', 'Admin\UsersController');
-    Route::resource('jobs', 'Admin\JobController');
+    Route::resource('jobs', 'Admin\JobsController');
     Route::resource('shifts', 'Admin\ShiftsController');
     Route::resource('nurse-categories', 'Admin\NurseCategoriesController');
+    Route::resource('teritory-pages', 'Admin\TeritoryPagesController');
     // Route::resource('nurse-categories', 'Admin\NurseCategoriesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
     Route::resource('reports', 'Admin\ReportsController');
 
@@ -36,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('users-data', 'Admin\UsersController@getListData')->name('admin.users-data');
     Route::get('nurse-categories-data', 'Admin\NurseCategoriesController@getListData')->name('admin.nurse-categories-data');
     Route::get('shifts-data', 'Admin\ShiftsController@getListData')->name('admin.shifts-data');
+    Route::get('jobs-data', 'Admin\JobsController@getListData')->name('admin.jobs-data');
+    Route::get('teritory-pages-data', 'Admin\TeritoryPagesController@getListData')->name('admin.teritory-pages-data');
 
   });
 

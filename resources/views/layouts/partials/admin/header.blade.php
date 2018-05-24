@@ -33,8 +33,8 @@
               <img src="{{ asset('/bower_components/admin-lte/dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
 
               <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
+                {{ Auth::user()->name }}
+                <!-- <small>Member since Nov. 2012</small> -->
               </p>
             </li>
 

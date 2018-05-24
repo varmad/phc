@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header"></section>
 <div class="container">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
             <h1>

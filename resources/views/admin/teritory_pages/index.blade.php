@@ -8,13 +8,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
             <h1>
-                <i class="glyphicon glyphicon-align-justify"></i> Nurse Categories
-                <a class="btn btn-success pull-right" href="{{ route('nurse-categories.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
+                <i class="glyphicon glyphicon-align-justify"></i> Teritory Pages
+                <a class="btn btn-success pull-right" href="{{ route('teritory-pages.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
             </h1>
         </div>
         @include('common.alerts')
 
-        @include ('admin/nurse_categories/_datatable')
+        @include ('admin/teritory_pages/_datatable')
       </div>
   </div>
 </div>

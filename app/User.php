@@ -31,6 +31,15 @@ class User extends Authenticatable
     ];
 
 
+    /**
+     * Get the jobs for the user.
+     */
+    public function jobs()
+    {
+        return $this->hasMany('App\Model\Job');
+    }
+
+
     public function getLastLoginAttribute($date)
     {
         return Carbon::parse($date)->format('F d, y h:i A');

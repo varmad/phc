@@ -11,7 +11,7 @@
       <div class="pull-left info">
         <p>{{ Auth::user()->name }}</p>
         <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
       </div>
     </div>
 
@@ -31,6 +31,9 @@
       </li>
       <li {{{ ( (Request::is('admin/nurse-categories/*') || Request::is('admin/nurse-categories')) ? 'class=active' : '') }}}>
         <a href="{{route('nurse-categories.index')}}"><i class="fa fa-tasks"></i> <span>Nurse Categories</span></a>
+      </li>
+      <li {{{ ( (Request::is('admin/teritory-pages/*') || Request::is('admin/teritory-pages')) ? 'class=active' : '') }}}>
+        <a href="{{route('teritory-pages.index')}}"><i class="fa fa-tasks"></i> <span>Teritory Pages</span></a>
       </li>
 
       <li class="treeview">
