@@ -16,16 +16,12 @@ $( "#nurse_category_is_active" ).click(function() {
 	if($('#nurse_category_is_active').is(':checked')) {
 		$('#nurse_category_is_active_val').val('1');
 	} else {
-		$('#nurse_category_is_active_val').val('0')
+		$('#nurse_category_is_active_val').val('0');
 	}
-
-	// if ($('#nurse_category_is_active').attr('checked')){
-  //   alert('checked');
-	// }
-	// else {
-  //   alert('un-checked');
-	// }
 });
+
+
+
 
 $('#testing-confirm').on('click', function () {
 	return confirm($(this).data('confirm'));
