@@ -1,0 +1,219 @@
+@media handheld, only screen and (min-width: 180px) and (max-width: 480px)
+{
+	
+h1 {
+    font-size: 27px;
+	margin:10px 0px;
+}
+/******Login Screen*****/
+.login_bg {
+	background-image:url(../images/login_bg-mob.jpg);
+}	
+.left_nav {
+	width:100%;
+	float:none;
+	margin-top: 0%;
+	background-image:url(../images/left_nav_bg.png);
+}
+
+.left_nav ul {
+	margin: 0 auto;
+	display: inline-flex;
+}
+
+.left_nav ul li {
+	padding: 9px 10px 9px 10px;
+	font-size:16px;
+	background-image:none;
+	border-bottom: 0px solid #fff;
+	
+}
+.content_wrap {
+	width:85%;
+	margin:0 auto;
+	float:none;	
+	padding-top:15px;
+	margin-top:3%;
+}
+.login_form_wrap {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.login_form {
+    width: 80%;
+	margin-top:3%;
+	padding: 28px 15px;
+}
+.login_form input[type="text"], .login_form input[type="button"], .login_form span {
+	font-size:16px;
+}
+.bottom_container ul li {
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    font-size: 16px;
+    border-right: 0px solid #fff;
+	border-bottom:1px solid #fff;
+}
+/******Login Screen*****/
+
+/*************Contact style**************/
+.content_wrap {
+	width:85%;
+	font-size:14px;
+	float:none;
+}
+.contact_wrap {
+	width:100%;
+	float:left;
+}
+.contact_address {
+	width:100%;
+	float:right;
+}
+.contact_address h2 {
+	margin-top:10px;
+	font-size:19px;
+}
+.contact_wrap input[type=text] {
+	width:97%;
+}
+
+.contact_wrap textarea {
+	width:96.6%;
+}
+
+
+/***********Nursing Home screens*************/
+.nursing_dashboard_bg {
+	background-image:url(../images/mobile.jpg);
+	background-repeat:repeat-y;
+}
+.dashboard_wrap {
+    width: 95%;
+}
+.dashboard_profile_form_wrap {
+    width: 100%;
+	float:none;
+}
+.dashboard_profile_form_wrap ul li {
+	font-size:14px;
+}
+.dashboard_profile_pic {
+	width:auto;
+	float:none;
+	margin-top:3%;
+}
+.buttons {
+	float:none;
+	border:0px solid green;
+}
+.buttons ul {
+	width:40%;
+	float:right;
+	margin:0px auto;
+	border:0px solid red;
+}
+.buttons ul li {
+	margin:0px;
+	float: right;
+	text-align: center;
+	margin-left: 3px;
+}
+.buttons ul li a {
+	font-size:14px;
+}
+
+/******New requirement screen*********/
+
+.new_requirement_form_wrap {
+	width:100%;
+	float:none;
+}
+.new_requirement_form_wrap select {
+	font-size:14px;
+}
+.new_requirement_form_wrap input[type=text] {
+	font-size:14px;
+	width:97%;
+}
+/******Shift Accepted  screen*********/
+.shift_title {
+	font-size:16px;
+}
+.profile_wrap ul, .profile_wrap_color ul {
+    width: 100%;
+}
+.profile_img {
+    width: 100%;
+    float: none;
+    text-align: center;
+}
+
+
+/******change Password  screen*********/
+.change_password_wrap_bg {
+	width:auto;
+}
+
+/***********Nursing Home screens*************/
+
+
+/***********Staff Home screens*************/
+
+.staff_dashboard_bg {
+	background-image:url(../images/staff-bg.jpg);
+	background-repeat:repeat-y;
+}
+
+.new_requirment_left {
+    width: 100%;
+    float: none;
+}
+
+.new_requirment_right {
+    width: 100%;
+    float: none;
+}
+.staff_buttons ul li {
+	margin-bottom:12px;
+}
+
+.staff_buttons ul li a {
+	font-size:16px;
+	
+}
+
+
+
+.dashboard_nav ul li {
+    margin: 0px 10px 0px 0px;
+    padding: 0px 23px;
+}
+
+
+/***********Footer styles*************/
+
+.footer_container {
+	height:auto;
+	background-image:url(../images/footer_bg.jpg);
+	background-position:top;
+	padding-top:12px;
+	background-size:100%;
+	
+}
+.footer_container p {
+	padding:0px;
+	margin:0px;
+}
+
+.footer_container ul li {
+	display:block;
+	float:left;
+	width:48%;
+	margin:0px 0px 0px 1%;
+	padding:8px 0px;
+	border-right:0px solid #666666;
+	border-bottom:1px solid #767676;
+}
+/***********Footer styles*************/
+}

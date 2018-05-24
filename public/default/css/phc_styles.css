@@ -1,0 +1,1653 @@
+body {
+
+	margin: 0px;
+
+	font-family: 'Raleway', sans-serif;
+
+	color: #424242;
+
+	font-size: 14px;
+
+	width: 100%;
+
+	padding-top: 10px;
+
+}
+
+body * {
+
+	font-family: 'Raleway', sans-serif;
+
+}
+
+/*--------------------------------------------------------------------------------*/
+
+
+
+body.base_bg {
+
+	background-image: url(../images/login_bg.jpg);
+
+	background-repeat: no-repeat;
+
+	background-size: 100%;
+
+	background-attachment:fixed;
+
+}
+
+body.base_bg.nursing {
+
+	background-image: url(../images/nursing_dashboard_bg.jpg);
+
+	background-repeat: no-repeat;
+
+	background-size: 100%;
+
+	background-attachment:fixed;
+
+}
+
+body.base_bg.staff {
+
+	background-image: url(../images/staff_dashboard_bg.jpg);
+
+	background-repeat: no-repeat;
+
+	background-size: 100%;
+
+	background-attachment:fixed;
+
+}
+
+h1, h2, h3 {
+
+	/*color:#424242;*/
+
+	margin: 0px 0px;
+
+	padding: 0px;
+
+}
+
+h1 {
+
+	font-size: 36px;
+
+	margin: 20px 0px;
+
+}
+
+h2 {
+
+	font-size: 22px;
+
+}
+
+.clear {
+
+	clear: both;
+
+}
+
+.clearfix:after {
+
+	visibility: hidden;
+
+	display: block;
+
+	font-size: 0;
+
+	content: " ";
+
+	clear: both;
+
+	height: 0;
+
+}
+
+.clearfix {
+
+	display: inline-block;
+
+}
+
+/* start commented backslash hack \*/
+
+
+
+* html .clearfix {
+
+	height: 1%;
+
+}
+
+.clearfix {
+
+	display: block;
+
+}
+
+/* close commented backslash hack */
+
+
+
+.alert {
+
+	position: absolute;
+
+	left: 0;
+
+	top: 111px;
+
+	width: 96%;
+
+	text-align: center;
+
+}
+
+/*********form-errors hadling****************/
+
+
+
+label.error, dt label.error, .help-inline {
+
+	color: #BF3831;
+
+	font-size: 12px;
+
+	margin: 0;
+
+	padding: 5px;
+
+	text-align: left;
+
+}
+
+select.error, textarea.error, input.error {
+
+	outline: 2px solid #BF3831;
+
+}
+
+.redhint {
+
+	font-weight: 700;
+
+	font-size: 14px;
+
+	text-align: center;
+
+	padding-bottom: 20px;
+
+}
+
+/*----------------- Form styles---------------------*/
+
+
+
+/*----- Adjusted along with bootstrap so that it will apply to all inputs accross site*/
+
+
+
+input[type=text], input[type="password"], textarea, select {
+
+	width: 97%;
+
+	background: transparent;
+
+	border: 0px solid #78957c;
+
+	padding: 8px 5px;
+
+	margin: 0px 0px 5px 0px;
+
+	/* font-size: 22px;*/ /* commented by varma */
+
+}
+
+select, select option {
+
+	width: 99%;
+
+    }
+
+input[type=submit] {
+
+	background: transparent;
+
+	margin: 0px 0px 5px 0px;
+
+	padding: 8px;
+
+	font-size: 16px;
+
+	outline: none;
+
+	float: right;
+
+}
+
+.base_bg input, .base_bg textarea, .base_bg select, .base_bg select option{
+
+	background-image: url(../images/login_input_bg.png);
+
+	border: 0px solid #78957c;
+
+}
+
+.nursing input, .nursing textarea, .nursing select, .nursing select option {
+
+	background-image: url(../images/profile-accepted-bg.png);
+
+	border: 0px solid #78957c;
+
+}
+
+.staff input, .staff textarea, .staff select, .nursing select option {
+
+	background-image: url(../images/login_input_bg.png);
+
+	border: 0px solid #78957c;
+
+}
+
+.nursing .navbar-nav>li.selected{
+
+	background-image: url(../images/profile-accepted-bg.png);
+
+}
+
+.staff .navbar-nav>li.selected{
+
+	background-image: url(../images/login_input_bg.png);
+
+}
+
+input[type=file] {
+
+	background: none;
+
+}
+
+/******** Top section Logo ***********/
+
+
+
+.logo_container {
+
+	width: 100%;
+
+	height: 100px;
+
+	border-bottom: 1px solid #b2e3f9;
+
+	text-align: center;
+
+}
+
+/*************Contact style**************/
+
+
+
+.content_wrap {
+
+	width: 85%;
+
+	/*color:#424242;*/
+
+	font-size: 14px;
+
+	line-height: 23px;
+
+	float: right;
+
+	text-align: left;
+
+	border: 0px solid #adadad;
+
+	margin-right: 1%;
+
+	padding: 0px 15px 15px 15px;
+
+	background-image: url(../images/left_nav_bg.png);
+
+}
+
+.contact_wrap {
+
+	width: 60%;
+
+	float: left;
+
+}
+
+.contact_address {
+
+	width: 38%;
+
+	float: right;
+
+}
+
+.contact_input {
+
+	width: 49%;
+
+	font-size: 18px;
+
+	line-height: normal;
+
+	color: #4b340c;
+
+	margin: 0;
+
+	text-align: left;
+
+	outline: none;
+
+	float: left;
+
+}
+
+.contact_wrap input[type=text] {
+
+	font-size: 18px;
+
+	color: #ffffff;
+
+}
+
+.contact_wrap textarea {
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 18px;
+
+	color: #ffffff;
+
+	width: 97.4%;
+
+	resize: none;
+
+}
+
+.contact_wrap input[type=submit] {
+
+	width: 99%;
+
+	font-size: 18px;
+
+	color: #ffffff;
+
+	float: none;
+
+	background-image: url(../images/profile-accepted-bg.png);
+
+	border: 0px solid #78957c;
+
+}
+
+/******** Login form and left Nav ***********/
+
+
+
+.login_form_wrap {
+
+	width: 100%;
+
+	padding-top: 8%;
+
+	padding-bottom: 10%;
+
+}
+
+.left_nav {
+
+	width: 10%;
+
+	float: left;
+
+	margin-top: 4%;
+
+}
+
+.left_nav ul {
+
+	padding: 0px;
+
+	margin: 0px;
+
+}
+
+.left_nav ul li {
+
+	padding: 9px 0px 9px 10px;
+
+	margin: 0px;
+
+	background-image: url(../images/left_nav_bg.png);
+
+	background-repeat: repeat-x;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	/*color:#424242;*/
+
+	font-size: 18px;
+
+	line-height: normal;
+
+	border-bottom: 1px solid #fff;
+
+	list-style: none;
+
+	text-align: left;
+
+}
+
+.left_nav ul li a {
+
+	color: #424242;
+
+	text-decoration: none;
+
+}
+
+.left_nav ul li a:hover {
+
+	color: #808080;
+
+}
+
+/******** Login Form ***********/
+
+
+
+.login_form {
+
+	width: 25%;
+
+	margin: 0px auto;
+
+	background-image: url(../images/login_bg.png);
+
+	padding: 35px 15px;
+
+}
+
+.login_form input[type=submit] {
+
+	font-size: 16px;
+
+	float: right;
+
+}
+
+.login_form input[type=text]::placeholder {
+
+	color: #424242;
+
+}
+
+.login_form span {
+
+	font-family: 'Raleway', sans-serif;
+
+	color: #3e3e3e;
+
+	font-size: 15px;
+
+	margin-top: 12px;
+
+	cursor: pointer;
+
+	line-height: 0;
+
+}
+
+.login_form span.forgot_pass {
+
+	float: left;
+
+}
+
+.login_form span a {
+
+	color: #3e3e3e;
+
+	text-decoration: none;
+
+}
+
+.login_form span a:hover {
+
+	color: #808080;
+
+}
+
+
+
+.reset-wrap {
+
+	width:30%;
+
+	margin:0 auto;
+
+	float:left;
+
+	margin-left:22%;
+
+}
+
+.reset-wrap input[type=text] {
+
+	width: 100%;
+
+    margin-bottom: 8px;
+
+}
+
+/******** footer Section ***********/
+
+
+
+.footer {
+
+	width: 100%;
+
+}
+
+.footer ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+.footer ul li {
+
+	margin: 0px;
+
+	padding: 27px 0px 26px 0px;
+
+	float: left;
+
+	width: 33.28%;
+
+	list-style: none;
+
+	text-align: center;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 50px;
+
+	line-height: 50px;
+
+	color: #FFF;
+
+	border-right: 1px solid #fff;
+
+}
+
+.block1 {
+
+	background-color: #8dd8f8;
+
+}
+
+.block2 {
+
+	background-color: #c6cfd4;
+
+}
+
+.block3 {
+
+	background-color: #bd8cbf;
+
+	border-right: 0px solid #fff !important;
+
+}
+
+/****************************Login Screen styles End**********************************/
+
+
+
+/****************************Nursing Home Screen styles start**********************************/
+
+
+
+/******** Nursing Dashboard Profile ***********/
+
+
+
+.nursing_dashboard_container {
+
+	width: 100%;
+
+	padding-top: 10px;
+
+}
+
+/******** Top section Logo ***********/
+
+
+
+.nursing_dashboard_top_container {
+
+	width: 100%;
+
+	height: 100px;
+
+	border-bottom: 1px solid #bce7fa;
+
+	text-align: center;
+
+}
+
+/******** Dashboard Content ***********/
+
+
+
+.dashboard_wrap {
+
+	width: 1000px;
+
+	padding-bottom: 4%;
+
+	margin: 0px auto;
+
+	min-height: 300px;
+
+}
+
+.dashboard_nav {}
+
+.dashboard_nav ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+	list-style: none;
+
+	width: 100%;
+
+}
+
+.dashboard_nav ul li {
+
+	margin: 0px 10px 0px 0px;
+
+	padding: 8px 23px;
+
+	float: left;
+
+	background-image: url(../images/left_nav_bg.png);
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 19px;
+
+	/*color:#424242;*/
+
+}
+
+.dashboard_nav ul li a {
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	/*color:#424242;*/
+
+	text-decoration: none;
+
+}
+
+.dashboard_nav ul li a:hover {
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	color: #666666;
+
+	text-decoration: none;
+
+}
+
+.dashboard_profile_form_wrap {
+
+	width: 60%;
+
+	float: left;
+
+}
+
+.dashboard_profile_form_wrap label.control-label {
+
+	text-align: left;
+
+}
+
+.dashboard_profile_form_wrap ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+.dashboard_profile_form_wrap ul.profile_data li {
+
+	display: block;
+
+	margin: 0px 0px 3px 0px;
+
+	padding: 8px;
+
+	list-style: none;
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 17px;
+
+	/*color:#424242;*/
+
+}
+
+.dashboard_profile_form_wrap ul.profile_data li.error {
+
+	outline: 2px solid #BF3831;
+
+}
+
+.dashboard_profile_form_wrap ul.profile_data li:after {
+
+	visibility: hidden;
+
+	display: block;
+
+	font-size: 0;
+
+	content: " ";
+
+	clear: both;
+
+	height: 0;
+
+}
+
+.row-fluid .dashboard_profile_form_wrap .span6 {
+
+	width: 70%;
+
+}
+
+.dashboard_profile_pic {
+
+	width: 30%;
+
+	float: right;
+
+	clear: right;
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	background-repeat: repeat;
+
+	text-align: center;
+
+	padding: 20px;
+
+	margin-bottom: 20px;
+
+}
+
+.dashboard_profile_pic ul {
+
+	margin:0px;
+
+	padding:0px;
+
+}
+
+.dashboard_profile_pic ul li {
+
+	margin:0px;
+
+	padding:0px;
+
+	list-style:none;
+
+}
+
+.buttons {
+
+	float: right;
+
+}
+
+.buttons ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+.buttons ul li {
+
+	list-style: none;
+
+	float: left;
+
+	border: 0px !important;
+
+}
+
+.buttons a {
+
+	text-decoration: none;
+
+	color: #424242;
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	border: 0;
+
+	margin: 0px 0px 5px 0px;
+
+	padding: 10px;
+
+	font-size: 16px;
+
+	display: inline-block;
+
+}
+
+.buttons a:hover {
+
+	color: #303030;
+
+}
+
+/******** Nursing Dashboard Profile ***********/
+
+
+
+/******** New Requirment ***********/
+
+
+
+.new_requirement_form_wrap {
+
+	width: 60%;
+
+	float: left;
+
+}
+
+.new_requirement_form_wrap select {
+
+	width: 100%;
+
+	background: transparent;
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	border: 0px solid #78957c;
+
+	margin: 0px 0px 5px 0px;
+
+	padding: 8px;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 18px;
+
+	/*color:#424242;*/
+
+	outline: none;
+
+}
+
+.new_requirement_form_wrap input[type=text] {
+
+	width: 98.5%;
+
+	background: transparent;
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	border: 0px solid #78957c;
+
+	margin: 0px 0px 5px 0px;
+
+	padding: 8px 0px 8px 8px;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 18px;
+
+	/*color:#424242;*/
+
+	outline: none;
+
+}
+
+.new_requirement_form_wrap input[type=text]::placeholder {
+
+	/*color:#424242;*/
+
+}
+
+/******** New Requirment ***********/
+
+
+
+/******** Shift Accepted Profile ***********/
+
+
+
+.shift_accepted_wrap {
+
+	width: 100%;
+
+}
+
+.shift_title {
+
+	background-image: url(../images/left_nav_bg.png);
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 18px;
+
+	/*color:#424242;*/
+
+	padding: 10px 0px 10px 10px;
+
+	font-weight: normal;
+
+	margin-bottom: 5px;
+
+	line-height:18px;
+
+}
+
+.profile_wrap {
+
+	background-image: url(../images/login_bg.png);
+
+	padding: 15px;
+
+	margin-bottom: 10px;
+
+}
+
+.profile_wrap_color {
+
+	background-image: url(../images/profile_bg.png);
+
+	padding: 15px;
+
+	margin-bottom: 10px;
+
+}
+
+.profile_wrap ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+	width: 70%;
+
+	float: left;
+
+}
+
+.profile_wrap ul li {
+
+	margin: 0px;
+
+	padding: 8px 0px;
+
+	list-style: none;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 15px;
+
+	/*color:#424242;*/
+
+	border-bottom: 1px solid #fff;
+
+}
+
+.profile_wrap_color ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+	width: 70%;
+
+	float: left;
+
+}
+
+.profile_wrap_color ul li {
+
+	margin: 0px;
+
+	padding: 8px 0px;
+
+	list-style: none;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 15px;
+
+	/*color:#424242;*/
+
+	border-bottom: 1px solid #fff;
+
+}
+
+.profile_img {
+
+	width: 25%;
+
+	float: right;
+
+	text-align: center;
+
+}
+
+/******** Shift Accepted Profile ***********/
+
+
+
+/******** Change Password ***********/
+
+
+
+.change_password_wrap {
+
+	width: 100%;
+
+}
+
+.change_password_wrap_bg {
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	padding: 15px;
+
+	margin-bottom: 10px;
+
+	width: 40%;
+
+	margin: 0px auto;
+
+}
+
+.change_password_wrap_bg span, .change_password_wrap_bg p {
+
+	padding: 0;
+
+}
+
+/******** Change Password ***********/
+
+
+
+/****************************Nursing Home Screen styles End**********************************/
+
+
+
+/****************************Staff Home Screen styles start**********************************/
+
+
+
+/******** Top section Logo ***********/
+
+
+
+.staff_dashboard_top_container {
+
+	width: 100%;
+
+	height: 100px;
+
+	border-bottom: 1px solid #d4b4d5;
+
+	text-align: center;
+
+}
+
+/******** Staff new requirment ***********/
+
+
+
+.staff_new_requirment_wrap {
+
+	width: 100%;
+
+}
+
+.new_requirment_left {
+
+	width: 49%;
+
+	float: left;
+
+	clear:both;
+
+}
+
+.new_requirment_left ul {
+
+	margin: 0px;
+
+	margin-bottom: 10px;
+
+	padding: 0px;
+
+	background-image: url(../images/profile-accepted-bg.png);
+
+}
+
+.new_requirment_left ul li {
+
+	margin: 0px 10px;
+
+	padding: 8px 0px;
+
+	list-style: none;
+
+	border-bottom: 1px solid #fff;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 15px;
+
+	/*color:#424242;*/
+
+}
+
+.new_requirment_right {
+
+	width: 49%;
+
+	float: right;
+
+}
+
+.new_requirment_right ul {
+
+	margin: 0px;
+
+	margin-bottom: 10px;
+
+	padding: 0px;
+
+	background-image: url(../images/profile_bg.png);
+
+}
+
+.new_requirment_right ul li {
+
+	margin: 0px 10px;
+
+	padding: 8px 0px;
+
+	list-style: none;
+
+	border-bottom: 1px solid #fff;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 15px;
+
+	/*color:#424242;*/
+
+}
+
+.staff_buttons {
+
+	float: right;
+
+}
+
+.staff_buttons textarea {
+
+	width:364px;
+
+	height:25px;
+
+}
+
+.staff_buttons ul {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+.staff_buttons ul li {
+
+	margin: 0px 0px 0px 3px;
+
+	padding: 8px;
+
+	list-style: none;
+
+	background-image: url(../images/dash_profile_bg.png);
+
+	float: left;
+
+	border: 0px !important;
+
+}
+
+.staff_buttons ul li a {
+
+	text-decoration: none;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 19px;
+
+	/*color:#424242;*/
+
+}
+
+.staff_buttons ul li a:hover {
+
+	color: #303030;
+
+}
+.buttons input[type=submit] {
+	margin-left:5px;
+}
+
+.gap {
+
+	border-top: 1px solid #c7d0d5;
+
+	margin: 10px 0px 20px 0px;
+
+}
+
+.dotted_line_top {
+
+	width: 150px;
+
+	margin: 0px auto;
+
+	margin-top: 20px;
+
+	background-image: url(../images/dotted_line.png);
+
+	background-repeat: no-repeat;
+
+	background-position: top;
+
+	text-align: center;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 19px;
+
+	/*color:#424242;*/
+
+	padding: 10px 0px;
+
+}
+
+/*************change Password***************/
+
+
+
+.staff_change_password_wrap input[type=text] {
+
+	width: 97%;
+
+	background: transparent;
+
+	background-image: url(../images/login_input_bg.png);
+
+	border: 0px solid #78957c;
+
+	padding: 8px 5px;
+
+	margin: 0px 0px 5px 0px;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 18px;
+
+	/*color:#424242;*/
+
+	outline: none;
+
+}
+
+.staff_change_password_wrap input[type=text]::placeholder {
+
+	/*color:#424242;*/
+
+}
+
+.staff_change_password_wrap input[type=button] {
+
+	background: transparent;
+
+	background-image: url(../images/login_input_bg.png);
+
+	border: 0px solid #78957c;
+
+	margin: 0px 0px 5px 0px;
+
+	padding: 8px;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 18px;
+
+	/*color:#424242;*/
+
+	outline: none;
+
+	float: right;
+
+}
+
+/****************************Staff Home Screen styles start**********************************/
+
+
+
+/******** Footer Section ***********/
+
+
+
+.footer_container {
+
+	width: 100%;
+
+	height: 91px;
+
+	background-image: url(../images/footer_bg1.jpg);
+
+	background-position: center;
+
+	background-repeat: no-repeat;
+
+	/*font-family: 'Raleway', sans-serif;*/
+
+	font-size: 14px;
+
+	color: #666666;
+
+	text-align: center;
+
+	padding-top: 25px;
+
+}
+
+.footer_container p {}
+
+.footer_container ul {
+
+	margin: 0px auto;
+
+	padding: 0px;
+
+	width: 100%;
+
+}
+
+.footer_container ul li:nth-child(odd)  {
+
+	margin: 0px;
+
+	padding: 0px 8px;
+
+	list-style: none;
+
+	display: inline;
+
+	border-right: 0px solid #666666;
+
+}
+.footer_container ul li:nth-child(even)  {
+
+	margin: 0px;
+
+	padding: 0px 8px;
+
+	list-style: none;
+
+	display: inline;
+
+	border-left: 1px solid #666666;
+
+	border-right: 1px solid #666666;
+
+}
+
+.footer_container ul li a {
+
+	text-decoration: none;
+
+	color: #666666;
+
+}
+
+.footer_container ul li a:hover {
+
+	text-decoration: none;
+
+	color: #242424;
+
+}
+
+
+
+.shift_accept_ul{}
+
+.shift_accept_ul li{
+
+/*width:150px;*/
+
+display:inline;
+
+list-style:none;
+
+float:left;
+
+margin-right:10px;
+
+line-height:32px;
+
+}
+
+.shift_accept_ul li input[type=submit]{
+
+color:#424242;
+
+padding: 6px 15px;
+
+}
+
+.shift_accept_ul li select{
+
+width:150px;
+
+}
+
+
+
+
+
+/*-------------calender------------*/
+
+.calendar {
+
+    width: 100%;
+
+    min-width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+
+.calendar tbody tr:first-child th {
+
+    color: #505050;
+
+    margin: 0 0 10px 0;
+
+
+
+}
+
+
+
+.day_header {
+
+    font-weight: normal;
+
+    text-align: center;
+
+    color: #757575;
+
+    font-size: 15px;
+
+    background-image: url(../images/profile_bg.png);
+
+    padding:5px 0;
+
+    border:1px solid #CCC;
+
+}
+
+
+
+.calendar td {
+
+    width: 14%; /* Force all cells to be about the same width regardless of content */
+
+    border:1px solid #CCC;
+
+    height: 100px;
+
+    vertical-align: top;
+
+    font-size: 10px;
+
+    padding: 0;
+
+    position:relative;
+
+}
+
+
+
+.calendar td:hover {
+
+ background-image: url(../images/profile_bg.png);
+
+}
+
+
+
+.day_listing {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #2C2C2C;
+
+    padding: 3px 5px;
+
+    width:12px;
+
+    position:absolute;
+
+    right:0;
+
+
+
+}
+
+
+
+div.today {
+
+    background-image: url(../images/profile-accepted-bg.png);
+
+    height: 100%;
+
+}
+
+.calendar ul{
+
+margin:0;
+
+}
+
+.calendar ul li{
+
+list-style:none;
+
+padding:5px;
+
+font-size:10px;
+
+cursor:default;
+
+line-height:10px;
+
+}
+
+.new_requirement label{
+
+	font-size:16px !important;
+
+	color:#424242 !important;
+
+}
+
+.staff_new_requirment_wrap ul li.error {
+
+	outline: 2px solid #BF3831;
+
+}
+.previous {
+	float:left;
+	background-image: url(../images/profile_bg.png);
+	text-align: center;
+	color: #757575;
+	font-size: 15px;
+	padding:5px 8px;
+	margin-top:10px;
+}
+.next {
+	float:right;
+	background-image: url(../images/profile_bg.png);
+	text-align: center;
+	color: #757575;
+	font-size: 15px;
+	padding:5px 8px;
+	margin-top:10px;
+}
