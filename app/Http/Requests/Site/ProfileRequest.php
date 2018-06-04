@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Site;
 use Illuminate\Foundation\Http\FormRequest;
 use Auth;
 
-class UserRequest extends FormRequest
+class ProfileRequest extends FormRequest
 {
   /**
    * Determine if the user is authorized to make this request.
@@ -52,9 +52,7 @@ class UserRequest extends FormRequest
         case 'POST':
         {
           return [
-              'email' => 'required|string|email|max:255',
               'display_name' => 'required',
-              'username' => 'required',
               'mobile' => 'required',
               'address' => 'required'
           ];
@@ -64,29 +62,11 @@ class UserRequest extends FormRequest
         case 'PATCH':
         {
 
-          $rules = [
-              'email' => 'required|string|email|max:255|unique:users,id'.$this->id,
-              'password' => 'confirmed',
+          return [
               'display_name' => 'required',
-              'username' => 'required',
               'mobile' => 'required',
-              'address' => 'required',
-              'upload_id_proof' => 'file'
+              'address' => 'required'
           ];
-
-          if($this->input('role_id') == '2') {
-            $rules = [
-              'id_proof' => 'required'
-            ];
-          }
-
-          if($this->input('role_id') == '3') {
-            $rules = [
-              'nursing_home_series' => 'required'
-            ];
-          }
-
-          return $rules;
 
         }
         case 'GET':

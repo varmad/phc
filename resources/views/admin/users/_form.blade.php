@@ -1,4 +1,25 @@
+<?php
+  // echo old('role_id');exit;
+  if (old('role_id')) {
+    if(old('role_id') == '2') {
+      $staff_display = 1;
+      $nurse_display = 0;
+    }else{
+      $staff_display = 0;
+      $nurse_display = 1;
+    }
+  }else{
+    if( isset($user) && $user->hasRole('staff')) {
+      $staff_display = 1;
+      $nurse_display = 0;
+    }else{
+      $staff_display = 0;
+      $nurse_display = 1;
+    }
+  }
 
+?>
+<input type="hidden" name="timezone" id="user_tz">
 <h3><i class="fa fa-user"> </i> Account Details</h3> <hr />
 <div class="form-group">
     {!! Form::label('Email', 'Email') !!}
@@ -52,25 +73,40 @@
 <h3><i class="fa fa-universal-access"></i> Role</h3> <hr />
 <div class="form-group">
     {!! Form::label('Roles', 'Roles') !!}
-    {!! Form::select('role_id', $roles, null, ['class' => 'form-control' . ($errors->has('role_id') ? ' is-invalid' : ''), 'required']) !!}
+    {!! Form::select('role_id', $roles, null, ['id' => 'role_id','class' => 'form-control' . ($errors->has('role_id') ? ' is-invalid' : ''), 'required']) !!}
 
     @if ($errors->has('role_id'))
         <span class="invalid-feedback">{{ $errors->first('role_id') }}</span>
     @endif
 </div>
 
-@if (isset($user))
-<h3><i class="fa fa-user-md"></i> Nurse Categories</h3> <hr />
-<div class="form-group">
-    {!! Form::label('Nurse Categories', 'Nurse Categories') !!}
-    {!! Form::select('nurse_category_id', $nurse_categories, null, ['class' => 'form-control' . ($errors->has('nurse_category_id') ? ' is-invalid' : ''), 'required']) !!}
 
-    @if ($errors->has('nurse_category_id'))
-        <span class="invalid-feedback">{{ $errors->first('nurse_category_id') }}</span>
-    @endif
+
+@if (isset($user))
+<div class="user-role-staff" style=" {{ ( $staff_display ) ? 'display: block' : 'display:none' }}" >
+  <h3><i class="fa fa-user-md"></i> Nurse Categories</h3> <hr />
+  <div class="form-group">
+      {!! Form::label('Nurse Categories', 'Nurse Categories') !!}
+      {!! Form::select('nurse_category_id', $nurse_categories, null, ['id' => 'nurse_category_id','class' => 'form-control' . ($errors->has('nurse_category_id') ? ' is-invalid' : ''), 'required']) !!}
+
+      @if ($errors->has('nurse_category_id'))
+          <span class="invalid-feedback">{{ $errors->first('nurse_category_id') }}</span>
+      @endif
+  </div>
+</div>
+
+<div class="user-role-nursing" style=" {{ ( $nurse_display ) ? 'display: block' : 'display:none' }}">
+  <h3><i class="fa fa-user-md"></i>  Nursing Home</h3> <hr />
+  <div class="form-group">
+      {!! Form::label('PHC Series No', 'PHC Series No') !!}
+      {!! Form::text('nursing_home_series', null, ['id' => 'nursing_home_series','class' => 'form-control' . ($errors->has('nursing_home_series') ? ' is-invalid' : '')]) !!}
+
+      @if ($errors->has('nursing_home_series'))
+          <span class="invalid-feedback">{{ $errors->first('nursing_home_series') }}</span>
+      @endif
+  </div>
 </div>
 @endif
-
 
 <h3><i class="fa fa-user"> </i> Profile Details</h3> <hr />
 <div class="form-group">
@@ -112,3 +148,31 @@
 </div>
 
 @endif
+
+@push('inline-scripts')
+<script>
+$(function () {
+  $("#role_id").change(function(){
+    var role_id = this.value;
+
+    if (role_id == '2') {
+      //staff
+      $(".user-role-staff").show();
+      $(".user-role-nursing").hide();
+
+    } else if(role_id == '3') {
+      //nursing
+      $(".user-role-staff").hide();
+      $(".user-role-nursing").show();
+    }
+
+  })
+});
+
+$(function () {
+    // guess user timezone
+    $('#user_tz').val(moment.tz.guess())
+})
+</script>
+
+@endpush

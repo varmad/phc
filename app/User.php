@@ -36,9 +36,19 @@ class User extends Authenticatable
      */
     public function jobs()
     {
-        return $this->hasMany('App\Model\Job');
+        return $this->hasMany('App\Models\Job', 'nursing_id');
     }
 
+    public function active_jobs() {
+
+      return $this->jobs()->where('status', 'Active');
+
+    }
+
+    public function accepted_jobs()
+    {
+        return $this->hasMany('App\Models\UserJob', 'user_id')->whereNull('is_dropout');
+    }
 
     public function getLastLoginAttribute($date)
     {

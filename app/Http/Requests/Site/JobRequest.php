@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Site;
 
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
@@ -35,15 +35,11 @@ class JobRequest extends FormRequest
   public function rules(): array
   {
       return [
-          // 'job_reference_id' => 'required',
-          'nursing_id' => 'required',
           'staff_count' => 'required',
           'nurse_category_id' => 'required',
           'shift_id' => 'required',
           'start_date' => 'required',
-          'end_date' => 'required',
-          'description' => 'required',
-          'status' => 'required'
+          'end_date' => 'required'
       ];
   }
 }

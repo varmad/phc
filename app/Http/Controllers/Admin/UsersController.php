@@ -57,7 +57,7 @@ class UsersController extends Controller
       $user->user_service_type = 0;
       $user->last_ip = '';
       $user->ban_message = '';
-      $user->timezone = '';
+      $user->timezone = Input::get('timezone');
       $user->force_password_reset = 0;
       $user->status = 'Active';
 
@@ -117,17 +117,19 @@ class UsersController extends Controller
       $user->email = Input::get('email');
       $user->display_name = Input::get('display_name');
       $user->username = Input::get('username');
-      $user->password = Hash::make(Input::get('password'));
+      if(Input::get('password') != '') {
+        $user->password = Hash::make(Input::get('password'));
+      }
       $user->mobile = Input::get('mobile');
       $user->address = Input::get('address');
       $user->nurse_category_id = Input::get('nurse_category_id');
       $user->id_proof = Input::get('id_proof');
       $user->user_service_type = 0;
+      $user->nursing_home_series = Input::get('nursing_home_series');
       $user->last_ip = '';
       $user->ban_message = '';
-      $user->timezone = '';
+      $user->timezone = Input::get('timezone');
       $user->force_password_reset = 0;
-      $user->status = 'Active';
 
       // file upload
       if(request()->upload_id_proof) {

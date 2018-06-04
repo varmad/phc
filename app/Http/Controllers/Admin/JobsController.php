@@ -12,6 +12,7 @@ use App\Models\NurseCategory;
 use App\Models\Shift;
 use App\User;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Input;
 
 class JobsController extends Controller
 {
@@ -68,19 +69,31 @@ class JobsController extends Controller
     public function store(JobRequest $request)
     {
 
-      $job = Job::create($request->only([
-        'job_reference_id',
-        'nursing_id',
-        'staff_count',
-        'nurse_category_id',
-        'shift_id',
-        'start_date',
-        'end_date',
-        'description',
-        'status'
-      ]));
+      $job_object = new Job;
+      $shift_dates = $job_object->dateRangeDates(Input::get('start_date'), Input::get('end_date'));
 
-      return redirect()->route('jobs.index', $job)->withSuccess(__('Job created successfully'));
+      if(count($shift_dates) > 0) {
+        foreach($shift_dates AS $shift_date){
+          $job_reference_id = generate_random_string();
+
+          $job = new Job;
+          $job->job_reference_id = $job_reference_id;
+          $job->nursing_id = Input::get('nursing_id');
+          $job->staff_count = Input::get('staff_count');
+          $job->nurse_category_id = Input::get('nurse_category_id');
+          $job->shift_id = Input::get('shift_id');
+          $job->start_date = $shift_date;
+          $job->end_date = $shift_date;
+          $job->description = Input::get('description');
+          $job->status = Input::get('status');
+
+          $job->save();
+        }
+
+        return redirect()->route('jobs.index', $job)->withSuccess(__('Job(s) created successfully'));
+      }
+
+      return redirect()->route('jobs.index', $job)->withErrors(__('Error while creating the job(s)'));
     }
 
     /**

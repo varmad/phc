@@ -1,12 +1,12 @@
 
-<div class="form-group">
+<!-- <div class="form-group">
     {!! Form::label('Job Reference ID', __('Job Reference ID')) !!}
     {!! Form::text('job_reference_id', $job_reference_id, ['readonly' => 'readonly', 'class' => 'form-control' . ($errors->has('job_reference_id') ? ' is-invalid' : '')]) !!}
 
     @if ($errors->has('job_reference_id'))
         <span class="invalid-feedback">{{ $errors->first('job_reference_id') }}</span>
     @endif
-</div>
+</div> -->
 <div class="form-group">
     {!! Form::label('Nurseing Homes', 'Nurseing Homes') !!}
     {!! Form::select('nursing_id', $nursing_homes, null, ['class' => 'form-control' . ($errors->has('nursing_id') ? ' is-invalid' : ''), 'required']) !!}

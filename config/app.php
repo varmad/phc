@@ -165,6 +165,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
 
         App\Providers\HelperServiceProvider::class,
+        Clickatell\ClickatellServiceProvider::class,
 
     ],
 
@@ -217,6 +218,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Clickatell' => Clickatell\ClickatellFacade::class,
 
     ],
 

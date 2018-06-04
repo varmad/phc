@@ -21,15 +21,23 @@
     <link href="{{ asset('default/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('default/css/phc_styles.css') }}" rel="stylesheet">
     <link href="{{ asset('default/css/slim.css') }}" rel="stylesheet">
+    <link href="{{ asset('default/css/bootstrap-datepicker.css') }}" rel="stylesheet">
 
 
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 </head>
-<body class="base_bg">
+@hasrole('staff')
+<?php $role_class = 'staff';  ?>
+@else
+<?php $role_class = 'nursing';  ?>
+@endhasrole
+
+<body class="base_bg {{$role_class}}">
     <!-- Main Header -->
     @include('layouts/partials/site/header')
+    @include('layouts/partials/site/header_nav')
 
-    <div class="login_form_wrap clearfix">
+    <div class="dashboard_wrap clearfix">
       <!-- Start of Main Container -->
       @include('layouts/partials/site/navigation')
       @yield('content')
@@ -39,9 +47,14 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset("default/js/jquery-1.8.2.min.js") }}"><\/script>');</script>
-    
+    <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
+
     <script src="{{ asset('/default/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/default/js/jquery.validate.js') }}"></script>
-    <script src="{{ asset('/default/js/validation_rules.js') }}"></script>
+    <!-- <script src="{{ asset('/default/js/moment.js') }}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min.js"></script>
+
+    @stack('inline-scripts')
 </body>
 </html>

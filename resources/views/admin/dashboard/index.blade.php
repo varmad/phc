@@ -21,14 +21,14 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
-            <h3>30</h3>
+            <h3>{{$jobs}}</h3>
 
-            <p>New Jobs</p>
+            <p>Jobs</p>
           </div>
           <div class="icon">
             <i class="fa fa-handshake-o"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="{{route('jobs.index')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -36,14 +36,14 @@
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-            <h3>10</h3>
+            <h3>{{$shifts}}</h3>
 
             <p>Shifts</p>
           </div>
           <div class="icon">
             <i class="fa fa-sign-in"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="{{route('shifts.index')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -51,14 +51,14 @@
         <!-- small box -->
         <div class="small-box bg-yellow">
           <div class="inner">
-            <h3>44</h3>
+            <h3>{{$users}}</h3>
 
             <p>Users Registered</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="{{route('users.index')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -66,14 +66,14 @@
         <!-- small box -->
         <div class="small-box bg-red">
           <div class="inner">
-            <h3>15</h3>
+            <h3>0</h3>
 
             <p>Banned Users</p>
           </div>
           <div class="icon">
             <i class="fa fa-ban"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="{{route('users.index')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
