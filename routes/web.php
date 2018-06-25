@@ -55,6 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('shift-accept', 'Site\ShiftController@accept')->name('shift.accept')->middleware('auth');
   Route::get('shift-dropout', 'Site\ShiftController@dropout')->name('shift.dropout')->middleware('auth');
   Route::post('shift-dropout-accept', 'Site\ShiftController@acceptDropout')->name('shift.dropout-accept')->middleware('auth');
+  Route::get('my-calender', 'Site\CalenderController@index')->name('calender.my-calender')->middleware('auth');
 
   Route::get('test-sms', 'Site\SendSmsController@index')->name('test.sms')->middleware('auth');
 

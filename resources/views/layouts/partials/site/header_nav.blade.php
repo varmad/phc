@@ -22,7 +22,9 @@
         <li {{{ ( (Request::is('shift-dropout') ) ? 'class=selected' : '') }}}>
           <a href="{{route('shift.dropout')}}"> Dropout </a>
         </li>
-        <li class=""><a href="#">Shifts</a></li>
+        <li {{{ ( (Request::is('my-calender') ) ? 'class=selected' : '') }}}>
+          <a href="{{route('calender.my-calender')}}">Shifts</a>
+        </li>
         @else
         <li {{{ ( (Request::is('requirment/create') ) ? 'class=selected' : '') }}}>
           <a href="{{route('requirment.create')}}">New Requirement</a>

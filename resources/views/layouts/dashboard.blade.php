@@ -22,6 +22,9 @@
     <link href="{{ asset('default/css/phc_styles.css') }}" rel="stylesheet">
     <link href="{{ asset('default/css/slim.css') }}" rel="stylesheet">
     <link href="{{ asset('default/css/bootstrap-datepicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('bower_components/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bower_components/fullcalendar/dist/fullcalendar.print.min.css') }}" rel="stylesheet" media="print">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.css" rel="stylesheet" type="text/css">
 
 
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
@@ -55,6 +58,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min.js"></script>
 
+    <script src="{{ asset('/bower_components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.js"></script>
+
     @stack('inline-scripts')
+    @stack('inline-styles')
 </body>
 </html>
