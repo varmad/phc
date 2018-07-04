@@ -50,6 +50,7 @@ class Job extends Model
         return $this->belongsTo('App\User');
     }
 
+  
     /**
      * Get the phone record associated with the user.
      */
@@ -210,7 +211,7 @@ class Job extends Model
       return $jobs;
     }
 
-    
+
 
 
 }

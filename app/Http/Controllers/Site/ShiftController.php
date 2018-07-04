@@ -13,6 +13,8 @@ use App\Models\Shift;
 use App\Models\Job;
 use App\Http\Requests\Site\ProfileRequest;
 use App\Models\UserJob;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\JobAccepted;
 
 class ShiftController extends Controller
 {
@@ -73,6 +75,8 @@ class ShiftController extends Controller
           $user_job->updated_by = $this->user->id;
 
           $user_job->save();
+
+           Mail::to($job->nursing->email)->send(new JobAccepted($job));
 
           return redirect()->route('shift-list.index')->withSuccess(__('Shift accespted successfully.'));
         } else {

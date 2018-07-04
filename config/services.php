@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => env('ewinedeal.com'),
+        'secret' => env('key-f21d4f174a448b3a3b3e1473d8c4bd6c'),
     ],
 
     'ses' => [
