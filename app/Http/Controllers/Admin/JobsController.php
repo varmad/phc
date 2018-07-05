@@ -14,6 +14,9 @@ use App\User;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Input;
 
+use App\Mail\JobCreated;
+use Illuminate\Support\Facades\Mail;
+
 class JobsController extends Controller
 {
     /**
@@ -88,6 +91,17 @@ class JobsController extends Controller
           $job->status = Input::get('status');
 
           $job->save();
+
+          #Notify email to all nurses
+          #get all users belongs to category
+          $nurses = User::where('nurse_category_id', $job->nurse_category_id)->pluck('email');
+          $user = User::find($job->nursing_id);
+          if(count($nurses) > 0) {
+            foreach($nurses AS $nurse) {
+              Mail::to($nurse)->send(new JobCreated($job, $user));
+            }
+          }
+
         }
 
         return redirect()->route('jobs.index', $job)->withSuccess(__('Job(s) created successfully'));

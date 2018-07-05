@@ -19,10 +19,10 @@ class JobCreated extends Mailable
      *
      * @return void
      */
-    public function __construct($job)
+    public function __construct($job, $user)
     {
         $this->job = $job;
-        $this->user = Auth::user();
+        $this->user = $user;
     }
 
     /**

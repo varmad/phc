@@ -96,7 +96,7 @@ class RequirmentController extends Controller
       $nurses = User::where('nurse_category_id', $job->nurse_category_id)->pluck('email');
       if(count($nurses) > 0) {
         foreach($nurses AS $nurse) {
-          Mail::to($nurse)->send(new JobCreated($job));
+          Mail::to($nurse)->send(new JobCreated($job, $this->user));
         }
       }
 
