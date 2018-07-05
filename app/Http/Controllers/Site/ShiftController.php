@@ -105,7 +105,7 @@ class ShiftController extends Controller
           if($user_job) {
             $user_job->is_dropout = 1;
             $user_job->droupout_reason = Input::get("drop_reason_".$request->uj_id."_text");
-            $user_job->deleted = 1;
+            $user_job->is_deleted = 1;
             $user_job->save();
 
             return redirect()->route('shift.dropout')->withSuccess(__('See you soon!!'));
