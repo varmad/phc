@@ -13,6 +13,8 @@ use App\Models\Shift;
 use App\Models\Job;
 use App\Http\Requests\Site\ProfileRequest;
 use App\Http\Requests\Site\JobRequest;
+use App\Mail\JobCreated;
+use Illuminate\Support\Facades\Mail;
 
 class RequirmentController extends Controller
 {
@@ -88,6 +90,16 @@ class RequirmentController extends Controller
       $job->updated_by = $this->user->id;
 
       $job->save();
+
+      #Notify email to all nurses
+      #get all users belongs to category
+      $nurses = User::where('nurse_category_id', $job->nurse_category_id)->pluck('email');
+      if(count($nurses) > 0) {
+        foreach($nurses AS $nurse) {
+          Mail::to($nurse)->send(new JobCreated($job));
+        }
+      }
+
 
       return redirect()->route('requirment.create')->withSuccess(__('Job created successfully'));
     }
