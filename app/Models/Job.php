@@ -50,7 +50,7 @@ class Job extends Model
         return $this->belongsTo('App\User');
     }
 
-  
+
     /**
      * Get the phone record associated with the user.
      */
@@ -153,7 +153,8 @@ class Job extends Model
       $today_date = $job->start_date;
 
       // $user_job = UserJob::where('shift_date', $today_date)->where('user_id', $user->id)->where('job_id', $job->id)->get();
-      $user_job = UserJob::where('user_id', $user->id)->orderBy('shift_date', 'DESC')->first();
+      $user_job = UserJob::where('user_id', $user->id)->where('is_deleted', 0)->orderBy('shift_date', 'DESC')->first();
+      
       if($user_job) {
         $last_shift_end_date_time = $user_job->shift_date." ".$user_job->shift_end_time;
         $job_start_date_time = $job->start_date." ".$job->shift->start_time;
@@ -192,9 +193,14 @@ class Job extends Model
 
       $user_job = UserJob::where('user_id', $user->id)->where('job_id', $job->id)->get();
       if(count($user_job) > 0) {
-          return false;
+          if($user_job[0]->is_deleted == 1) {
+            return 'dropout';
+          } else {
+            return 'accepted';
+          }
+
       } else {
-        return true;
+        return 'can_accept';
       }
     }
 

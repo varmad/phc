@@ -23,7 +23,7 @@
       <li>Localize : {{$job->localDate($job->created_at)}}</li>
     </ul>
 
-    @if($job->getShowAcceptButton($job, $user))
+    @if($job->getShowAcceptButton($job, $user) == 'can_accept')
     {!! Form::open(['route' => ['shift.accept'], 'method' =>'POST', 'class' => 'form-horizontal', 'autocomplete' => 'off']) !!}
     <input type="hidden" name='job_reference_id' value="{{$job->job_reference_id}}">
     <div class="staff_buttons">
@@ -35,6 +35,14 @@
       </ul>
     </div>
     {!! Form::close() !!}
+    @elseif($job->getShowAcceptButton($job, $user) == 'dropout')
+    <div class="staff_buttons">
+      <ul>
+        <li>
+          You have dropped out!
+        </li>
+      </ul>
+    </div>
     @else
     <div class="staff_buttons">
       <ul>
