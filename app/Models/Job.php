@@ -101,7 +101,7 @@ class Job extends Model
 
     public function scopeBetweenCurrentDate($query)
     {
-       return $query->whereRaw("start_date > ".$this->tomorrow_date);
+       return $query->whereRaw("start_date >= ".$this->tomorrow_date);
     }
 
     public function scopeRecentCreated($query)
@@ -130,16 +130,19 @@ class Job extends Model
       // $given_date_time = '2018-06-03 17:17:10';
       $date_one = Carbon::parse($current_date_time);
       $date_two = Carbon::parse($given_date_time);
-      // echo "Current ".$date_one;
+      // echo "Current 1".$date_one;
       // echo "<br>";
-      // echo "Given ".$date_two;
+      // echo "Given 2".$date_two;
       // echo "<br>";
-      $minutes = $date_two->diffInMinutes($date_one) ;
+      $minutes = $date_two->diffInMinutes($date_one);
 
+      $current_date = $this->getTodayDate();
+      $shift_date = $this->dateFromDateTime($date_two);
+      // echo "<br>";
       // echo $minutes;exit;
-      if (Carbon::parse($date_two)->gt($date_one) && $minutes > 180) {
+      if (Carbon::parse($shift_date)->gte($current_date) && $minutes > 180) {
         return true;
-      } elseif(Carbon::parse($date_two)->gt($date_one) && $minutes > 720){
+      } elseif(Carbon::parse($shift_date)->gte($current_date) && $minutes > 720){
         return true;
       } else {
         return false;
@@ -154,12 +157,23 @@ class Job extends Model
 
       // $user_job = UserJob::where('shift_date', $today_date)->where('user_id', $user->id)->where('job_id', $job->id)->get();
       $user_job = UserJob::where('user_id', $user->id)->where('is_deleted', 0)->orderBy('shift_date', 'DESC')->first();
-      
+
+
+
       if($user_job) {
         $last_shift_end_date_time = $user_job->shift_date." ".$user_job->shift_end_time;
         $job_start_date_time = $job->start_date." ".$job->shift->start_time;
 
         $can_accespet = $this->canAccesptShift($job_start_date_time, $last_shift_end_date_time);
+
+        // echo "<pre>";
+        // print_r($last_shift_end_date_time);
+        // echo "<br>";
+        // print_r($job_start_date_time);
+        // echo "<br>";
+        // echo $can_accespet;
+        // exit;
+
         if ($can_accespet) {
           return $job->start_date;
         }else{
