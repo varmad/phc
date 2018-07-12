@@ -12,6 +12,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasRoles;
 
+    protected $tomorrow_date	= 'DATE(NOW())';
     /**
      * The attributes that are mass assignable.
      *
@@ -30,7 +31,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
     /**
      * Get the jobs for the user.
      */
@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     public function accepted_jobs()
     {
-        return $this->hasMany('App\Models\UserJob', 'user_id')->whereNull('is_dropout');
+        return $this->hasMany('App\Models\UserJob', 'user_id')->whereNull('is_dropout')->whereRaw("shift_date >= ".$this->tomorrow_date);
     }
 
     public function getLastLoginAttribute($date)

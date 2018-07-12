@@ -15,6 +15,7 @@ use App\Http\Requests\Site\ProfileRequest;
 use App\Models\UserJob;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\JobAccepted;
+use App\Mail\JobDroped;
 
 class ShiftController extends Controller
 {
@@ -92,6 +93,8 @@ class ShiftController extends Controller
     public function dropout(Request $request) {
 
         $user_jobs = $this->user->accepted_jobs;
+        // print_r($user_jobs);
+        // exit;
         $user = $this->user;
         // $jobs = Job::where('status', 'Active')
         return view('site.shifts.dropouts', compact('user_jobs', 'user'));
@@ -103,10 +106,14 @@ class ShiftController extends Controller
         if(Input::get("drop_reason_".$request->uj_id."_text")) {
           $user_job = UserJob::find($request->uj_id);
           if($user_job) {
+            $job = Job::find($user_job->job_id);
+            
             $user_job->is_dropout = 1;
             $user_job->droupout_reason = Input::get("drop_reason_".$request->uj_id."_text");
             $user_job->is_deleted = 1;
             $user_job->save();
+
+            Mail::to($job->nursing->email)->send(new JobDroped($job, $user_job));
 
             return redirect()->route('shift.dropout')->withSuccess(__('See you soon!!'));
           }
