@@ -36,13 +36,24 @@
     </div>
     {!! Form::close() !!}
     @elseif($job->getShowAcceptButton($job, $user) == 'dropout')
-    <div class="staff_buttons">
+    <!-- <div class="staff_buttons">
       <ul>
         <li>
           You have dropped out!
         </li>
       </ul>
+    </div> -->
+    {!! Form::open(['route' => ['shift.accept'], 'method' =>'POST', 'class' => 'form-horizontal', 'autocomplete' => 'off']) !!}
+    <input type="hidden" name='job_reference_id' value="{{$job->job_reference_id}}">
+    <div class="staff_buttons">
+      <ul>
+        <li>
+          <!-- <a href="#">Accept</a> -->
+            {!! Form::submit('Accept', ['class' => 'btn btn-primary']) !!}
+        </li>
+      </ul>
     </div>
+    {!! Form::close() !!}
     @else
     <div class="staff_buttons">
       <ul>

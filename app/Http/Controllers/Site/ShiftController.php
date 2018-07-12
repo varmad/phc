@@ -74,6 +74,9 @@ class ShiftController extends Controller
           $user_job->shift_end_time = $job->shift->end_time;
           $user_job->created_by = $this->user->id;
           $user_job->updated_by = $this->user->id;
+          // $user_job->is_dropout = null;
+          // $user_job->is_deleted = '0';
+
 
           $user_job->save();
 
@@ -107,7 +110,7 @@ class ShiftController extends Controller
           $user_job = UserJob::find($request->uj_id);
           if($user_job) {
             $job = Job::find($user_job->job_id);
-            
+
             $user_job->is_dropout = 1;
             $user_job->droupout_reason = Input::get("drop_reason_".$request->uj_id."_text");
             $user_job->is_deleted = 1;
