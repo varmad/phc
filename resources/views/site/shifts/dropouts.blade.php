@@ -13,7 +13,7 @@
   <div class="{{$div_class}}" style="padding-top:5px;">
     <h3 class="shift_title">Shift Title : {{$user_job->job->nurse_category->name}} <span class="pull-right span2">{{$user_job->job->start_date}}</span></h3>
     <ul>
-      <li>Nursing Home : {{$user->display_name}}</li>
+      <li>Nursing Home : {{$user_job->job->nursing->display_name}}</li>
       <li>Booking Reference : {{$user_job->job->booking_reference}}</li>
       <li>Location : {{$user->address}}</li>
       <li>Shift Time : {{$user_job->job->shift->start_time}} to {{$user_job->job->shift->end_time}}</li>
