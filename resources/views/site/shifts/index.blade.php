@@ -58,7 +58,7 @@
     <div class="staff_buttons">
       <ul>
         <li>
-          You have Accepted for the day!
+          You have Accepted the shift!
         </li>
       </ul>
     </div>
