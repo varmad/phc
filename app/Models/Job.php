@@ -231,7 +231,27 @@ class Job extends Model
       return $jobs;
     }
 
+    public function is_eligible_to_create_shift($input_data) {
+      // get shift time
+      $shift = Shift::find($input_data['shift_id']);
+      $start_date =  Carbon::createFromFormat('d/m/Y', $input_data['start_date'])->format('Y-m-d');
 
+      $given_date_time = $start_date.' '.$shift->start_time;
+
+      $current_date_time = Carbon::parse($this->localDate(Carbon::now()));
+
+      $date_one = Carbon::parse($current_date_time);
+      $date_two = Carbon::parse($given_date_time);
+      
+      $minutes = $date_two->diffInMinutes($date_one);
+
+      if ( Carbon::parse($date_two)->gte($date_one) && $minutes > 180) {
+        return true;
+      } else {
+        return false;
+      }
+
+    }
 
 
 }

@@ -75,7 +75,15 @@ class RequirmentController extends Controller
     public function store(JobRequest $request)
     {
 
+
+
       $job = new Job;
+      $shift_date = $job->is_eligible_to_create_shift(Input::all());
+
+      if(!$shift_date) {
+        return redirect()->route('requirment.create')->withErrors(__('Sorry you are not allowed to create job.'));
+      }
+
       $job->job_reference_id = generate_random_string();
       $job->nursing_id = $this->user->id;
       $job->staff_count = Input::get('staff_count');
