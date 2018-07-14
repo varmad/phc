@@ -59,6 +59,8 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::get('test-sms', 'Site\SendSmsController@index')->name('test.sms')->middleware('auth');
 
+  Route::get('shift-accepted-list/{job_reference_id}{accepted_date?}', 'Site\ShiftController@acceptedList')->name('shift.accepted-list')->middleware('auth');
+
   // Route::get('admin', function () {
   //     return view('admin_template');
   // })->name('admin');

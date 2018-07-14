@@ -29,7 +29,7 @@
         <li {{{ ( (Request::is('requirment/create') ) ? 'class=selected' : '') }}}>
           <a href="{{route('requirment.create')}}">New Requirement</a>
         </li>
-        <li {{{ ( (Request::is('requirment') ) ? 'class=selected' : '') }}}>
+        <li {{{ ( (Request::is('requirment') || Request::is('shift-accepted-list/*') ) ? 'class=selected' : '') }}}>
           <a href="{{route('requirment.index')}}">Shift Accepted Profiles</a>
         </li>
         @endhasrole

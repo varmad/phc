@@ -22,7 +22,7 @@
 
     <div class="staff_buttons">
       <ul>
-        <li><a href="#">view</a></li>
+        <li><a href="{{route('shift.accepted-list', array('job_reference_id' => $job->job_reference_id))}}">view</a></li>
       </ul>
 
     </div>

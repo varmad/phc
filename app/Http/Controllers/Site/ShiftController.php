@@ -128,4 +128,14 @@ class ShiftController extends Controller
 
     }
 
+
+    public function acceptedList(Request $request) {
+
+        $job = Job::where('job_reference_id', $request->job_reference_id)->first();
+        $shift_accepted_list = $job->user_jobs->where('is_dropout', '!=', '1')->where('is_deleted', '!=', '1');
+        $user = $this->user;
+        // $jobs = Job::where('status', 'Active')
+        return view('site.shifts.accepted_list', compact('shift_accepted_list', 'user', 'job'));
+    }
+
 }
