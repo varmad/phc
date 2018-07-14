@@ -46,7 +46,11 @@
         <!--<li style="border-bottom:0px solid #fff;">Description : asdsd</li>-->
       </ul>
 
+      @if($user->profile_picture && isset($user))
+      <div class="profile_img"><img src="{{asset('storage/profile_picture/'.$user->profile_picture)}}" width="180" height="250" alt="Staff Picture"></div>
+      @else
       <div class="profile_img"><img src="http://local.phc.com/assets/images/nurse-pic.png" width="90" height="118" alt="Staff Picture"></div>
+      @endif
       <div class="clear"></div>
     </div>
     <div class="clear"></div>

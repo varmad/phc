@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function active_jobs() {
 
-      return $this->jobs()->where('status', 'Active');
+      return $this->jobs()->where('status', 'Active')->orderBy('jobs.start_date', 'desc');
 
     }
 
