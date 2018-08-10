@@ -15,6 +15,7 @@ use App\Http\Requests\Site\ProfileRequest;
 use App\Http\Requests\Site\JobRequest;
 use App\Mail\JobCreated;
 use Illuminate\Support\Facades\Mail;
+use App\Services\ClickatellService;
 
 class RequirmentController extends Controller
 {
@@ -105,6 +106,14 @@ class RequirmentController extends Controller
       if(count($nurses) > 0) {
         foreach($nurses AS $nurse) {
           Mail::to($nurse)->send(new JobCreated($job, $this->user));
+
+
+          $clickatell = new ClickatellService();
+          // +919177541077
+          $sms_text = "Hello Sham, \n\rNew job has been posted for ".$job->nurse_category->name. "\r\nNursing Home: ".$this->user->display_name."\r\nShift Time:".$job->shift->name." ".$job->shift->start_time." ".$job->shift->end_time."\r\nShift Duration:".$job->start_date." to ".$job->end_date;
+          $clickatell->sendSms('+919177541077', $sms_text);
+          $clickatell->sendSms('00447862948713', $sms_text);
+
         }
       }
 

@@ -16,6 +16,7 @@ use App\Models\UserJob;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\JobAccepted;
 use App\Mail\JobDroped;
+use App\Services\ClickatellService;
 
 class ShiftController extends Controller
 {
@@ -81,6 +82,13 @@ class ShiftController extends Controller
           $user_job->save();
 
            Mail::to($job->nursing->email)->send(new JobAccepted($job));
+
+           $clickatell = new ClickatellService();
+           // +919177541077
+           $sms_text = "Hello PHC, \n\rStaff has been accepted for ".$job->nurse_category->name. "\r\nName OF the Nurse: ".$this->user->display_name."\r\nJob ID:".$this->user->display_name." Shift Time: ".$job->shift->start_time." ".$job->shift->end_time."\r\nDate by:".$job->start_date;
+           $clickatell->sendSms('+919177541077', $sms_text);
+           $clickatell->sendSms('00447862948713', $sms_text);
+
 
           return redirect()->route('shift-list.index')->withSuccess(__('Shift accespted successfully.'));
         } else {
