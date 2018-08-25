@@ -112,7 +112,8 @@ class RequirmentController extends Controller
           // +919177541077
           $sms_text = "Hello Sham, \n\rNew job has been posted for ".$job->nurse_category->name. "\r\nNursing Home: ".$this->user->display_name."\r\nShift Time:".$job->shift->name." ".$job->shift->start_time." ".$job->shift->end_time."\r\nShift Duration:".$job->start_date." to ".$job->end_date;
           $clickatell->sendSms('+919177541077', $sms_text);
-          $clickatell->sendSms('00447862948713', $sms_text);
+          $clickatell->sendSms('+447862948713', $sms_text);
+          $clickatell->sendSms('+447703361786', $sms_text);
 
         }
       }
