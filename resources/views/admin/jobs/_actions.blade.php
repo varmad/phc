@@ -9,3 +9,8 @@
       <i class="fa fa-pencil" aria-hidden="true"></i>
   </a>
 </div>
+<div class="pull-right" style="padding:2px;">
+  <a href="{{ route('admin.job.accepted-list', $job->job_reference_id) }}" title="Accepted Shifts" class="btn btn-primary btn-sm">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+  </a>
+</div>

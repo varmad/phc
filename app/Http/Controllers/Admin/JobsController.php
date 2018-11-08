@@ -13,12 +13,32 @@ use App\Models\Shift;
 use App\User;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Input;
+use Auth;
 
 use App\Mail\JobCreated;
 use Illuminate\Support\Facades\Mail;
 
 class JobsController extends Controller
 {
+
+  protected $user;
+
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+
+      $this->middleware(function($request, $next){
+        $this->user = Auth::user();
+
+        return $next($request);
+      });
+
+  }
+
     /**
      * Display a listing of the resource.
      *
@@ -146,6 +166,17 @@ class JobsController extends Controller
 
       return redirect()->route('jobs.edit', $job)->withSuccess(__('Job updated.'));
     }
+
+
+    public function acceptedList(Request $request) {
+
+        $job = Job::where('job_reference_id', $request->job_reference_id)->first();
+        $shift_accepted_list = $job->user_jobs->where('is_dropout', '!=', '1')->where('is_deleted', '!=', '1');
+        $user = $this->user;
+        // $jobs = Job::where('status', 'Active')
+        return view('admin.jobs.accepted_list', compact('shift_accepted_list', 'user', 'job'));
+    }
+
 
     /**
      * Remove the specified resource from storage.

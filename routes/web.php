@@ -40,6 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
       Route::get('jobs-data', 'Admin\JobsController@getListData')->name('admin.jobs-data');
       Route::get('teritory-pages-data', 'Admin\TeritoryPagesController@getListData')->name('admin.teritory-pages-data');
 
+      Route::get('job-accepted-list/{job_reference_id}{accepted_date?}', 'Admin\JobsController@acceptedList')->name('admin.job.accepted-list')->middleware('auth');
+
+
     });
   });
 
